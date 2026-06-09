@@ -165,44 +165,6 @@ Change this immediately in non-local environments.
 - Basic output escaping is handled by helper `h()`.
 - This is a simple educational-style codebase; harden further before production.
 
-Recommended production improvements:
 
-- Add CSRF protection for all forms
-- Add rate-limiting and login lockout
-- Enforce stronger password policy
-- Add audit logs for sensitive actions
-- Move from auto-migration-on-request to managed migrations
 
-## Troubleshooting
 
-### Unsupported database error
-
-If you see an unsupported database message, set:
-
-```env
-DB_CONNECTION=pgsql
-```
-
-### PostgreSQL authentication failed
-
-Check these in `.env`:
-
-- `DB_HOST`
-- `DB_PORT`
-- `DB_DATABASE`
-- `DB_USERNAME`
-- `DB_PASSWORD`
-
-### Database does not exist
-
-Create it manually in PostgreSQL, then refresh the app.
-
-## Notes for Contributors
-
-- Keep PHP files strict (`declare(strict_types=1);`).
-- Follow existing page pattern: auth guard -> action handling -> view rendering.
-- Preserve `hms_` table prefix when extending schema.
-
-## License
-
-No license file is currently included. Add a `LICENSE` file if you plan to distribute this project publicly.
